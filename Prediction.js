@@ -3,7 +3,7 @@ const mongoUrl = require("./mongoCredentials");
 
 mongoose.Promise = Promise;
 
-mongoose.connect(mongoUrl);
+mongoose.connect(mongoUrl, { useNewUrlParser: true });
 
 const prediction = mongoose.Schema({
     userName: {
