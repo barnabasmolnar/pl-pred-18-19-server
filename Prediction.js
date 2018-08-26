@@ -5,7 +5,7 @@ mongoose.Promise = Promise;
 
 mongoose.connect(mongoUrl, { useNewUrlParser: true });
 
-const prediction = mongoose.Schema({
+const prediction = new mongoose.Schema({
     userName: {
 		type: String, 
 		required: true,
