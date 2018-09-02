@@ -11,7 +11,9 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 
 app.get("/api/prediction", (req, res) => {
-    Prediction.find({}, "userName createdAt")
+    Prediction
+        .find({}, "userName createdAt")
+        .sort({ createdAt: -1 })
         .then(result => res.json(result))
         .catch(err => res.status(404).json(err));
 });
